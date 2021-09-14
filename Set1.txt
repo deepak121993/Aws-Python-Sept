@@ -1,0 +1,29 @@
+1. What is the output of the following code?
+nums = set([1,1,2,3,3,3,4,4])
+print(len(nums))
+
+Hint: Set consists unique element.
+
+2. What will be the output?
+d = {"john":40, "peter":45}
+print(list(d.keys()))
+
+Hint: d.keys() is the function which will show keys
+
+3.Write a for loop that prints all elements of a list and their position in the list.
+ a = [4,7,3,2,5,9]
+Hint: Use Loop to iterate through list elements.
+
+4.Please write a program which accepts a string from console and print the
+characters that have even indexes.
+ Example: If the following string is given as input to the program:
+ H1e2l3l4o5w6o7r8l9d
+ Then, the output of the program should be:
+ Helloworld
+
+5. Please write a program which accepts a string from console and print it in reverse
+order.
+ Example: If the following string is given as input to the program:
+ rise to vote sir
+ Then, the output of the program should be:
+ ris etov ot esir
