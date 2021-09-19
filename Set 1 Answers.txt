@@ -1,0 +1,44 @@
+# 1. What is the output of the following code?
+nums = set([1, 1, 2, 3, 3, 3, 4, 4])
+print(len(nums))
+print([nums])
+
+# Hint: Set consists unique element.
+
+# Ans : 4 because one of each number.
+# Query: when printing just the nums the output is {1, 2 , 3, 4}. What does {} represent
+# because this is not a list nor a tuple and how would you extract or unpack individual values to print ?
+
+# 2. What will be the output?
+d = {"john": 40, "peter": 45}
+print(list(d.keys()))
+# Ans: As it is Key:value notation and output is will result in list ['John', 'Peter']
+print(list(d.keys())[0])
+# To Unpack the individual name John within the list
+print(list(d.values()))
+# output : [40 , 45]
+
+# Hint: d.keys() is the function which will show keys
+
+
+# 3.Write a for loop that prints all elements of a list and their position in the list.
+a = [4, 7, 3, 2, 5, 9]
+# Hint: Use Loop to iterate through list elements.
+for i in a:
+    print(i)
+
+# 4.Please write a program which accepts a string from console and print the
+# characters that have even indexes.
+# Example: If the following string is given as input to the program:
+letters = "H1e2l3l4o5w6o7r8l9d"
+# Then, the output of the program should be:
+# Helloworld
+print(letters[0::2])
+
+# 5. Please write a program which accepts a string from console and print it in reverse
+# order.
+# Example: If the following string is given as input to the program:
+sentence = 'rise to vote sir'
+# Then, the output of the program should be:
+# ris etov ot esir
+print(sentence[-1::-1])
