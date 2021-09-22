@@ -1,0 +1,37 @@
+1) length of the given set is 4
+# The set takes only the unique values and removes all the duplications.
+
+2) Output is ['john', 'peter']
+# Since we have asked only for the keys.
+
+3) a = [4,7,3,2,5,9]
+   for i in a:
+       print(i)
+
+   Output :
+   4
+   7
+   3
+   2
+   5
+   9
+
+4) name = ["Nandini Uppalapati"]
+   for i in name:
+       print(i)
+       slicing = i[0: :2]   
+       print(slicing)
+    
+    Output:
+    Nandini Uppalapati
+    NniiUplpt
+
+5) name = ["Nandini Uppalapati"]
+   for i in name:
+       print(i)
+       reverse = i[: :-1]   
+       print(reverse)
+
+    Output:
+    Nandini Uppalapati
+    itapalappU inidnaN
