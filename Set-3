@@ -1,0 +1,111 @@
+Assignment-1:
+
+A three digit number is said to be an “Armstrong number” if the sum of the third power of its individual digits is equal to the number itself.
+Example: 371 is an Armstrong number as 371 = 3 power 3 + 7 power 3 + 1 power 3
+              407 is an Armstrong number as 407 = 4  power 3 + 0  power  3 + 7  power 3
+Write a python code to check whether a given three digit number is an Armstrong number.
+
+
+Assignment-2:
+
+Write a python program to generate the ticket numbers for specified number of passengers traveling in a flight as per the details mentioned below:
+The ticket number should be generated as airline:src:dest:number
+where
+
+Consider AI as the value for airline
+src and dest should be the first three characters of the source and destination cities.
+number should be auto-generated starting from 101
+The program should return the list of ticket numbers of last five passengers.
+Note: If passenger count is less than 5, return the list of all generated ticket numbers.
+
+Sample Input:
+
+airline = AI
+source = Bangalore
+destination = London
+no_of_passengers = 10
+
+Expected Output: 
+['AI:Ban:Lon:106', 'AI:Ban:Lon:107', 'AI:Ban:Lon:108', 'AI:Ban:Lon:109', 'AI:Ban:Lon:110']
+
+
+Sample Input:
+
+airline = BA
+source = Australia
+destination = France
+no_of_passengers = 2
+
+
+Expected Output:: ['BA:Aus:Fra:101', 'BA:Aus:Fra:102']
+
+
+ Assignment-3:
+ 
+ 1.Write a Python program to generate the next 15 leap years starting from a given year. Populate the leap years into a list and display the list. 
+
+Hint:
+
+def find_leap_years(given_year):
+
+    # Write your logic here
+
+    return list_of_leap_years
+
+list_of_leap_years=find_leap_years(2000)
+print(list_of_leap_years)
+
+
+ Assignment-4:
+ 
+ARS Gems Store sells different varieties of gems to its customers.
+
+Write a Python program to calculate the bill amount to be paid by a customer based on the list of gems and quantity purchased. Any purchase with a total bill amount above Rs.30000 is entitled for 5% discount. If any gem required by the customer is not available in the store, then consider total bill amount to be -1.
+
+Assume that quantity required by the customer for any gem will always be greater than 0.
+
+Perform case-sensitive comparison wherever applicable.
+
+
+Hint:
+
+#lex_auth_012693795044450304151
+
+def calculate_bill_amount(gems_list, price_list, reqd_gems,reqd_quantity):
+    bill_amount=0
+    #Write your logic here
+    return bill_amount
+
+#List of gems available in the store
+gems_list=["Emerald","Ivory","Jasper","Ruby","Garnet"]
+
+#Price of gems available in the store. gems_list and price_list have one-to-one correspondence
+price_list=[1760,2119,1599,3920,3999]
+
+ Assignment-5:
+ 
+ Write a python function, create_largest_number(), which accepts a list of numbers and returns the largest number possible by concatenating the list of numbers. 
+Note: Assume that all the numbers are two digit numbers.
+ 
+
+Sample Input:
+
+23,34,55
+
+Expected Output:
+
+553423
+
+Hint:
+
+def create_largest_number(number_list):
+    pass
+    #remove pass and write your logic here
+
+number_list=[23,45,67]
+largest_number=create_largest_number(number_list)
+print(largest_number)
+
+
+ 
+ 
