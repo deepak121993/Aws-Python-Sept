@@ -82,6 +82,10 @@ gems_list=["Emerald","Ivory","Jasper","Ruby","Garnet"]
 #Price of gems available in the store. gems_list and price_list have one-to-one correspondence
 price_list=[1760,2119,1599,3920,3999]
 
+### reqd_gems = ["Emerald", "Ruby"]  / ["diamond"] 
+### reqd_quantity = [10, 15]        / [5]
+
+
  Assignment-5:
  
  Write a python function, create_largest_number(), which accepts a list of numbers and returns the largest number possible by concatenating the list of numbers. 
