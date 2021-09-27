@@ -1,0 +1,454 @@
+1. Problem Statement
+TechWorld, a technology training center, wants to allocate courses for instructors.
+An instructor is identified by name, technology skills, experience and average feedback.
+An instructor is allocated a course, if he/she satisfies the below two conditions:
+
+eligibility criteria:
+if experience is more than 3 years, average feedback should be 4.5 or more
+if experience is 3 years or less, average feedback should be 4 or more
+he/she should posses the technology skill for the course
+Identify the class name and attributes from the list of options below to represent instructors.
+
+Hint:
+
+check_eligibility()
+avg_feedback
+experience
+instructor_name
+allocate_course()
+allocate_course(technolody)
+__init__()
+Instructor
+calculate_avg_feedback()
+technology_skill
+Write a Python program to implement the class chosen with its attributes and methods.
+
+Note:
+
+
+Consider all instance variables to be private and methods to be public
+
+An instructor may have multiple technology skills, so consider instance variable, technology_skill to be a list
+
+check_eligibility(): Return true if eligibility criteria is satisfied by the instructor. Else, return false
+
+allocate_course(technology): Return true if the course which requires the given technology can be allocated to the instructor. Else, return false
+
+Perform case sensitive string comparison
+
+Represent few objects of the class, initialize instance variables using setter methods, invoke appropriate methods and test your program.
+
+
+2.
+
+Problem Statement
+Even though we can use reference variables to access static values, if we are not careful, we may end up making mistakes which are hard to notice as shown in the below code
+
+Hint:
+
+
+class Mobile:
+    discount=50
+    def display(self):
+        print(self.discount)
+         #The above line is valid way of accessing static
+        print(Mobile.discount)
+
+    def change(self):
+        self.discount=40
+        #The above line creates a new attribute
+        #instead of modifying the static value
+        #Now there are two discount variables,
+        #one at class level and the other at object level
+        #Hence best is to access Static through class name
+
+m1=Mobile()
+m1.display()#Will display 50 and 50
+
+m1.change()
+m1.display()#Will display 40 and 50
+
+
+3.
+super() keyword Problem statement:
+
+Even though the child class may override the methods of the parent class, it might still decide to use the parent class overridden method. To invoke anything belonging to the parent class, the child class needs to use the super() function, as shown below:
+
+Hint:
+
+class Phone:
+    def __init__(self, price, brand, camera):
+        print ("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print ("Buying a phone")
+
+    def return_phone(self):
+        print ("Returning a phone")
+
+class FeaturePhone(Phone):
+    pass
+
+class SmartPhone(Phone):
+    def buy(self):
+        print ("Buying a smartphone")
+        super().buy()
+
+s=SmartPhone(20000, "Apple", 13)
+
+s.buy()
+
+4.
+
+Problem Statement
+To access the parent class constructor we can use super(). Thus, the data is passed to the child class constructor, from there the data is sent to the parent class constructor and thus the attributes of the parent class get inherited.
+
+super() function can be used to access the constructor or methods of the parent class, but not the attributes. Also super() function can be used only inside a class and not outside it
+
+
+Hint:
+
+class Phone:
+    def __init__(self, price, brand, camera):
+        print ("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print ("Buying a phone")
+
+    def return_phone(self):
+        print ("Returning a phone")
+
+class FeaturePhone(Phone):
+    pass
+
+class SmartPhone(Phone):
+    def __init__(self, price, brand, camera, os, ram):
+        super().__init__(price, brand, camera)
+        self.os = os
+        self.ram = ram
+        print ("Inside smartphone constructor")
+
+    def buy(self):
+        print ("Buying a smartphone")
+
+s=SmartPhone(20000, "Samsung", 12, "Android", 2)
+
+print(s.os)
+print(s.brand)
+
+
+5.
+
+Problem Statement
+Given two lists, both having integer elements, write a python program using python lists to create and return a new list as per the rule given below:
+
+If the double of an element in list1 is present in list2, then add it to the new list. 
+ 
+
+Sample Input	
+ list1 - [11, 8,23,7,25, 15]
+ list2 – [6, 33, 50,31, 46, 78, 16,34]	 
+ 
+Expected Output:
+new_list – [8,23,25]
+
+Hint:
+
+def check_double(list1,list2):
+    new_list=[]
+    #write your logic here
+    return new_list
+
+#Provide different values for the variables and test your program
+list1=[11,8,23,7,25,15]
+list2=[6,33,50,31,46,78,16,34]
+print(check_double(list1, list2))
+ 
+---------------- 
+Note:  Advance level assignments of Data structure:
+LinkedList/Stack based asignment
+
+Before doing below assignment read some datastructure topics(Like linked list,stack,queue) from google/Youtube .
+Then only you will be able to do it
+-------------------------------------
+6
+
+Problem Statement
+Given two queues, one integer queue and another character queue, write a python program to merge them to form a single queue.  Follow the below rules for merging:
+
+Merge elements at the same position starting with the integer queue.
+If one of the queues has more elements than the other, add all the additional elements at the end of the output queue.
+Note : max_size of the merged queue should be the sum of the size of both the queues. 
+For example,  
+Input -- queue1: 3,6,8     queue2: b,y,u,t,r,o
+Output -- 3,b,6,y,8,u,t,r,o
+
+Hint:
+
+class Queue:
+    def __init__(self,max_size):
+
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__rear=-1
+        self.__front=0
+
+    def is_full(self):
+        if(self.__rear==self.__max_size-1):
+                return True
+        return False
+
+    def is_empty(self):
+        if(self.__front>self.__rear):
+            return True
+        return False
+
+    def enqueue(self,data):
+        if(self.is_full()):
+            print("Queue is full!!!")
+        else:
+            self.__rear+=1
+            self.__elements[self.__rear]=data
+
+    def dequeue(self):
+        if(self.is_empty()):
+            print("Queue is empty!!!")
+        else:
+            data=self.__elements[self.__front]
+            self.__front+=1
+            return data
+
+    def display(self):
+        for index in range(self.__front, self.__rear+1):
+            print(self.__elements[index])
+
+
+    def get_max_size(self):
+        return self.__max_size
+
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__front
+        while(index<=self.__rear):
+            msg.append((str)(self.__elements[index]))
+            index+=1
+        msg=" ".join(msg)
+        msg="Queue data(Front to Rear): "+msg
+        return msg
+
+def merge_queue(queue1,queue2):
+    #write your logic here
+    return merged_queue
+
+#Enqueue different values to both the queues and test your program
+
+queue1=Queue(3)
+queue2=Queue(6)
+queue1.enqueue(3)
+queue1.enqueue(6)
+queue1.enqueue(8)
+queue2.enqueue('b')
+queue2.enqueue('y')
+queue2.enqueue('u')
+queue2.enqueue('t')
+queue2.enqueue('r')
+queue2.enqueue('o')
+
+merged_queue=merge_queue(queue1, queue2)
+print("The elements in the merged queue are:")
+merged_queue.display()
+
+
+7.
+
+Problem Statement
+Given a stack of integers, write a python program that updates the input stack such that all occurrences of the smallest values are at the bottom of the stack, while the order of the other elements remains the same.
+
+For example:
+Input stack (top-bottom) :   5 66  5  8  7
+Output:  66  8  7  5  5
+
+
+Hint:
+
+class Stack:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__top=-1
+
+    def is_full(self):
+        if(self.__top==self.__max_size-1):
+            return True
+        return False
+
+    def is_empty(self):
+        if(self.__top==-1):
+            return True
+        return False
+
+    def push(self,data):
+        if(self.is_full()):
+            print("The stack is full!!")
+        else:
+            self.__top+=1
+            self.__elements[self.__top]=data
+
+    def pop(self):
+        if(self.is_empty()):
+            print("The stack is empty!!")
+        else:
+            data= self.__elements[self.__top]
+            self.__top-=1
+            return data
+
+    def display(self):
+        if(self.is_empty()):
+            print("The stack is empty")
+        else:
+            index=self.__top
+            while(index>=0):
+                print(self.__elements[index])
+                index-=1
+
+    def get_max_size(self):
+        return self.__max_size
+
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__top
+        while(index>=0):
+            msg.append((str)(self.__elements[index]))
+            index-=1
+        msg=" ".join(msg)
+        msg="Stack data(Top to Bottom): "+msg
+        return msg
+        
+        
+def change_smallest_value(number_stack):
+    #write your logic here
+
+    return number_stack
+
+#Add different values to the stack and test your program
+number_stack=Stack(8)
+number_stack.push(7)
+number_stack.push(8)
+number_stack.push(5)
+number_stack.push(66)
+number_stack.push(5)
+print("Initial Stack:")
+number_stack.display()
+change_smallest_value(number_stack)
+print("After the change:")
+number_stack.display()
+
+
+
+8.
+
+
+Given a queue of whole numbers. Write a python function to return a new queue which contains the evenly divisible numbers.
+
+Note: A number is said to be evenly divisible if it is divisible by all the numbers in the given range without any remainder. Consider the range to be from 1 to 10 (both inclusive).
+
+Assume that there will always be few elements in the input queue, which are evenly divisible by the numbers in the mentioned range.
+
+Example:
+Input Queue: 13983, 10080, 7113, 2520, 2500 (front - rear)
+Output Queue: 10080, 2520 (front-rear)
+
+----
+Hint:
+
+class Queue:
+    def __init__(self,max_size):
+
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__rear=-1
+        self.__front=0
+
+    def is_full(self):
+        if(self.__rear==self.__max_size-1):
+                return True
+        return False
+
+    def is_empty(self):
+        if(self.__front>self.__rear):
+            return True
+        return False
+
+    def enqueue(self,data):
+        if(self.is_full()):
+            print("Queue is full!!!")
+        else:
+            self.__rear+=1
+            self.__elements[self.__rear]=data
+
+    def dequeue(self):
+        if(self.is_empty()):
+            print("Queue is empty!!!")
+        else:
+            data=self.__elements[self.__front]
+            self.__front+=1
+            return data
+
+    def display(self):
+        for index in range(self.__front, self.__rear+1):
+            print(self.__elements[index])
+
+
+    def get_max_size(self):
+        return self.__max_size
+
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__front
+        while(index<=self.__rear):
+            msg.append((str)(self.__elements[index]))
+            index+=1
+        msg=" ".join(msg)
+        msg="Queue data(Front to Rear): "+msg
+        return msg
+
+def check_numbers(number_queue):
+    #write your logic here
+
+    return solution_queue1
+
+#Add different values to the queue and test your program
+number_queue=Queue(5)
+number_queue.enqueue(13983)
+number_queue.enqueue(10080)
+number_queue.enqueue(7113)
+number_queue.enqueue(2520)
+number_queue.enqueue(2500)
+check_numbers(number_queue)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

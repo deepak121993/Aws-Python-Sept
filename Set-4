@@ -1,0 +1,140 @@
+Assignment-1:
+
+Write a function, check_palindrome() to check whether the given string is a palindrome or not. The function should return true if it is a palindrome else it should return false.
+
+Note: Initialize the string with various values and test your program. Assume that all the letters in the given string are all of the same case. Example: MAN, civic, WOW etc.
+
+Hint:
+
+def check_palindrome(word):
+    pass
+    #Remove pass and write your logic here
+
+status=check_palindrome("malayalam")
+if(status):
+    print("word is palindrome")
+else:
+    print("word is not palindrome")
+
+
+Assignment-2:
+
+Given a string containing uppercase characters (A-Z), compress the string using Run Length encoding. Repetition of character has to be replaced by storing the length of that run.
+
+Write a python function which performs the run length encoding for a given String and returns the run length encoded String.
+
+Provide different String values and test your program
+
+Sample Input
+
+AAAABBBBCCCCCCCC
+
+Expected Output
+
+4A4B8C
+
+Sample Input
+
+AABCCA
+
+Expected Output
+
+2A1B2C1A
+
+Hint:
+
+
+def encode(message):
+    pass
+    #Remove pass and write your logic here
+
+#Provide different values for message and test your program
+encoded_message=encode("ABBBBCCCCCCCCAB")
+print(encoded_message)
+
+
+Assignment-3:
+
+A teacher is conducting a camp for a group of five children. Based on their performance and behavior during the camp, the teacher rewards them with chocolates.
+
+Write a Python function to
+
+1. Find the total number of chocolates received by all the children put together.
+Assume that each child is identified by an id and it is stored in a tuple and the number of chocolates given to each child is stored in a list.
+
+2. The teacher also rewards a child with few extra chocolates for his/her best conduct during the camp.
+
+If the number of extra chocolates is less than 1, an error message "Extra chocolates is less than 1", should be displayed.
+
+If the given child Id is invalid, an error message "Child id is invalid" should be displayed. Otherwise, the extra chocolates provided for the child must be added to his/her existing number of chocolates and display the list containing the total number of chocolates received by each child.
+
+Hint:
+
+child_id=(10,20,30,40,50)
+chocolates_received=[12,5,3,4,6]
+
+def calculate_total_chocolates():
+    pass
+    #Remove pass and write your logic here to find and return the total number of chocolates
+
+def reward_child(child_id_rewarded,extra_chocolates):
+    pass
+    #Remove pass and write your logic here
+
+
+    # Use the below given print statements to display the output
+    # Also, do not modify them for verification to work
+
+    #print("Extra chocolates is less than 1")
+    #print("Child id is invalid")
+    #print(chocolates_received)
+
+
+print(calculate_total_chocolates())
+#Test your code by passing different values for child_id_rewarded,extra_chocolates
+reward_child(20,2)
+
+
+Assignment-4:
+
+Dictionary-Problem:
+
+Represent a small bilingual (English-Swedish) glossary given below as a Python dictionary
+
+{"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"ar"} 
+
+and use it to translate your Christmas wishes from English into Swedish.
+
+That is, write a python function translate() that accepts the bilingual dictionary and a list of English words (your Christmas wish) and returns a list of equivalent Swedish words. 
+
+
+#List of gems required by the customer
+reqd_gems=["Ivory","Emerald","Garnet"]
+
+#Quantity of gems required by the customer. reqd_gems and reqd_quantity have one-to-one correspondence
+reqd_quantity=[3,10,12]
+
+bill_amount=calculate_bill_amount(gems_list, price_list, reqd_gems, reqd_quantity)
+print(bill_amount)
+
+	
+Hint:
+
+def translate(bilingual_dict,english_words_list):
+    #Write your logic here
+
+    return swedish_words_list
+
+
+bilingual_dict= {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"ar"}
+english_words_list=["merry","christmas"]
+print("The bilingual dict is:",bilingual_dict)
+print("The english words are:",english_words_list)
+
+swedish_words_list=translate(bilingual_dict, english_words_list)
+print("The equivalent swedish words are:",swedish_words_list)
+
+
+
+
+
